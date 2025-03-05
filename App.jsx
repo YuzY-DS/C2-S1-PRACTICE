@@ -1,28 +1,34 @@
 import React from "react";
 
-export const userData = {
-  firstName: "Ronan", // feel free to replace the name value
-  lastName: "Ogor", // feel free to replace the name value
-  title: "PN React JS Killer", // feel free to replace the title value
+export const vinhData = {
+  firstName: "Vinh",
+  lastName: "Hoang Nhu",
+  title: "PN Training Manager",
 };
 
-// Edit the User component code to output the userData data
-export function User() {
+export const myData = {
+  firstName: "My",
+  lastName: "Ngo",
+  title: "PN Trainer",
+};
+
+// TODO Edit the User component code to be able to display DIFFERENT users !
+export function User({firstName, lastName, title}) {
   return (
     <div id="user" data-testid="user">
-      <h2>{userData.firstName} {userData.lastName}</h2>
-      <p>{userData.title}</p>
+      <h2>{firstName} {lastName}</h2>
+      <p>{title}</p>
     </div>
   );
 }
 
-// DON'T edit the App component code
 function App() {
   return (
     <div id="app">
-      <h1>WELCOME !!</h1>
-      <p>PNV students are you ready to React Course ? You got this 💪</p>
-      <User />
+      <h1>PNV React Team !!</h1>
+      <p>Here are some PNV React masters, do you know them?</p>
+      <User {...vinhData}/> 
+      <User {...myData}/> 
     </div>
   );
 }
